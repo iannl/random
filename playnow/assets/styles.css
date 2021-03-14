@@ -1,0 +1,11 @@
+body {
+    font-family: 'Source Code Pro', 'Courier', monospace;
+    margin: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+canvas {
+    background: url('loader.svg') no-repeat center;
+}
