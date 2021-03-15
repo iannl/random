@@ -1,3 +1,12 @@
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    // true for mobile device
+    var mode = 'mobile'
+  }else{
+    // false for not mobile device
+    var mode = 'key'
+  }
+var dirx = 0;
+var diry = 0;
 var map = {
     cols: 12,
     rows: 12,
@@ -179,16 +188,27 @@ Game.init = function () {
     this.camera = new Camera(map, 512, 512);
     this.camera.follow(this.hero);
 };
+function key(k) {
+    if (k=='w') {diry = -1;}
+    else if (k=='s') {diry = 1;}
+    else if (k=='a') {dirx = -1;}
+    else if (k=='d') {dirx = 1;}
+}
+function off() {
+    dirx = 0
+    diry = 0
+}
 
 Game.update = function (delta) {
     // handle hero movement with arrow keys
-    var dirx = 0;
-    var diry = 0;
-    if (Keyboard.isDown(Keyboard.LEFT)) { dirx = -1; }
-    else if (Keyboard.isDown(Keyboard.RIGHT)) { dirx = 1; }
-    else if (Keyboard.isDown(Keyboard.UP)) { diry = -1; }
-    else if (Keyboard.isDown(Keyboard.DOWN)) { diry = 1; }
-
+    if (mode == 'key') {
+        dirx = 0
+        diry = 0
+        if (Keyboard.isDown(Keyboard.LEFT)) { dirx = -1; }
+        else if (Keyboard.isDown(Keyboard.RIGHT)) { dirx = 1; }
+        else if (Keyboard.isDown(Keyboard.UP)) { diry = -1; }
+        else if (Keyboard.isDown(Keyboard.DOWN)) { diry = 1; }
+    }
     this.hero.move(delta, dirx, diry);
     this.camera.update();
 };
