@@ -1,10 +1,10 @@
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     // true for mobile device
     var mode = 'mobile'
-  }else{
+} else {
     // false for not mobile device
     var mode = 'key'
-  }
+}
 var dirx = 0;
 var diry = 0;
 var map = {
@@ -202,12 +202,21 @@ function off() {
 Game.update = function (delta) {
     // handle hero movement with arrow keys
     if (mode == 'key') {
+        document.getElementById('keyzone').innerHTML=''
         dirx = 0
         diry = 0
         if (Keyboard.isDown(Keyboard.LEFT)) { dirx = -1; }
         else if (Keyboard.isDown(Keyboard.RIGHT)) { dirx = 1; }
         else if (Keyboard.isDown(Keyboard.UP)) { diry = -1; }
         else if (Keyboard.isDown(Keyboard.DOWN)) { diry = 1; }
+    } else {
+        document.getElementById('keyzone').innerHTML=`
+        <span onmousedown="key('w')" onmouseup="off()">˄</span><br>
+        <span onmousedown="key('a')" onmouseup="off()">˂</span>
+        <span>&nbsp;</span>
+        <span onmousedown="key('d')" onmouseup="off()">˃</span><br>
+        <span onmousedown="key('s')" onmouseup="off()">˅</span>
+        `
     }
     this.hero.move(delta, dirx, diry);
     this.camera.update();
