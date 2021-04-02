@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/common.js"></script>
+        <link rel="stylesheet" href="../css/common.css">
+        <title id="t">Loading BirdTest...</title>
+        <meta charset="utf-8">
+        <style>
+            body, html {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Loading...</h1>
+            <h2>If this takes longer then 3 seconds, try turning off you content blockers.</h2>
+        </div>
+        <script>
+            var addB = '<iframe src="../tests/index.html" width="'+window.innerWidth+'px" height="'+window.innerHeight+'px" style="border: none;"></iframe>'
+            var addP = 'Not made yet.'
+            var d = new Date();
+            var n = d.getHours();
+            var pro = hashCode('pro'+n).toString('36')
+            var basic = hashCode('basic'+n).toString('36')
+            if(window.location.hash) {
+                if(window.location.hash.substring(1) == basic) {
+                    document.getElementById('t').innerHTML='BirdTest – Basic'
+                    loadBasic()
+                }else if(window.location.hash.substring(1) == pro) {
+                    document.getElementById('t').innerHTML='BirdTest – Pro'
+                    loadPro()
+                }else{
+                    alert('Error. Session may have expired. Don\'t worry! Go home and click the button to get back to work!')
+                    window.location='../index.html'
+                }
+            } else {
+                window.location='../index.html'
+            }
+            function loadBasic() {
+                document.getElementById('content').innerHTML='<button onclick="document.getElementById(`content`).innerHTML=addB" style="position: fixed;">X</button><iframe src="../t/b/index.html" width="'+window.innerWidth+'px" height="'+window.innerHeight+'px" style="border: none;"></iframe>'
+            }
+
+            function loadPro() {
+                document.getElementById('content').innerHTML='<button onclick="document.getElementById(`content`).innerHTML=addP"style="position: fixed;">X</button><iframe src="../t/p/index.html" width="'+window.innerWidth+'px" height="'+window.innerHeight+'px" style="border: none;"></iframe>'
+            }
+
+            function close() {
+                
+            }
+        </script>
+    </body>
+</html>
