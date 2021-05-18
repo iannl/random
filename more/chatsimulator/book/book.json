@@ -1,8 +1,36 @@
 {
     "greeting" : {
-        "n1": "hello<greeting>",
-        "n2": "hi<greeting>",
-        "n3": "are you there?<greeting>",
-        "n4": "how are things?<greeting>"
+        "n1": "hello<hi>",
+        "n2": "hi<hi>",
+        "n3": "are you there?<yes>",
+        "n4": "how are things?<level>"
+    },
+
+    "farewell" : {
+        "n1": "bye<bye>",
+        "n2": "goodbye<bye>",
+        "n3": "i have to go<bye>",
+        "n4": "sorry i have to leave<bye>"
+    },
+
+    "hi" : {
+        "n1": "hello<newtopic>",
+        "n2": "hi<newtopic>",
+        "n3": "are you there?<newtopic>",
+        "n4": "how are things?<newtopic>"
+    },
+
+    "yes" : {
+        "n1": "yeah<newtopic>",
+        "n2": "yes<newtopic>",
+        "n3": "yup<newtopic>",
+        "n4": "uh huh<newtopic>"
+    },
+
+    "bye" : {
+        "n1": "goodbye<end>",
+        "n2": "bye<end>",
+        "n3": "byebye<end>",
+        "n4": "<end>"
     }
 }
