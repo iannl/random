@@ -43,11 +43,8 @@ function loop() {
     if (pre == 'end') {
         return
     } else {
-        console.log(randomTopic(getTrigger(pre)))
+        randomTopic(getTrigger(pre))
     }
     console.log(getNextChat(pre))
-    if (pre == 'end') {
-        return
-    }
     setTimeout(loop(), random(1000, 3000))
 }
