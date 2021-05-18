@@ -1,9 +1,10 @@
+var obj
 fetch("book/happy.json")
 .then(response => {
    return response.json();
 })
-.then(data => sessionStorage.setItem('temp', data));
+.then(data => sessionStorage.setItem('temp', JSON.stringify(data)));
 var data = sessionStorage.getItem('temp')
 window.onload = function() {
-    alert(data.greeting.n1)
+    obj = JSON.parse(data);
 }
