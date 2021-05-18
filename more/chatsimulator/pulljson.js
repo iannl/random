@@ -41,6 +41,8 @@ function loop() {
     let pre = topics[topics.length-1]
     if (pre == 'end') {
         return
+    } else {
+        console.log(randomTopic(getTrigger(pre)))
     }
     console.log(getNextChat(pre))
     setTimeout(loop(), random(1000, 3000))
