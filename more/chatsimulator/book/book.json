@@ -1,0 +1,8 @@
+{
+    "greeting" : {
+        "n1": "hello<greeting>",
+        "n2": "hi<greeting>",
+        "n3": "are you there?<greeting>",
+        "n4": "how are things?<greeting>"
+    }
+}

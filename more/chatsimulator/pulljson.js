@@ -8,3 +8,7 @@ var data = sessionStorage.getItem('temp')
 window.onload = function() {
     obj = JSON.parse(data);
 }
+
+function getTrigger(str) {
+    return str.split('/').pop().split('//')[0];
+}
