@@ -4,4 +4,6 @@ fetch("book/happy.json")
 })
 .then(data => sessionStorage.setItem('temp', data));
 var data = sessionStorage.getItem('temp')
-alert(data.greeting.n1)
+window.onload = function() {
+    alert(data.greeting.n1)
+}
