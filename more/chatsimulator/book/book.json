@@ -27,6 +27,27 @@
         "n4": "uh huh<newtopic>"
     },
 
+    "newtopic" : {
+        "n1": "so how is your dog?<levels>",
+        "n2": "are you feeling better?<yesno>",
+        "n3": "oh<newtopic>",
+        "n4": "<farewell>"
+    },
+
+    "levels" : {
+        "n1": "great<newtopic>",
+        "n2": "good<newtopic>",
+        "n3": "ok<newtopic>",
+        "n4": "bad<newtopic>"
+    },
+
+    "yesno" : {
+        "n1": "yeah<newtopic>",
+        "n2": "yes<newtopic>",
+        "n3": "no<newtopic>",
+        "n4": "nope<newtopic>"
+    },
+
     "bye" : {
         "n1": "goodbye<end>",
         "n2": "bye<end>",
