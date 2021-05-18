@@ -8,7 +8,8 @@ fetch("book/book.json")
 var data = sessionStorage.getItem('temp')
 window.onload = function() {
     obj = JSON.parse(data);
-
+    randomTopic('greeting')
+    loop()
 }
 
 function getTrigger(str) {
@@ -37,6 +38,6 @@ function getNextChat(prev) {
 }
 
 function loop() {
-    console.log(getNextChat(topics[topics.length]))
+    console.log(getNextChat(topics[topics.length-1]))
     setTimeout(loop(), random(600, 3000))
 }
