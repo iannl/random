@@ -34,7 +34,7 @@
         "n4": "<farewell>"
     },
 
-    "levels" : {
+    "level" : {
         "n1": "great<newtopic>",
         "n2": "good<newtopic>",
         "n3": "ok<newtopic>",
@@ -53,5 +53,12 @@
         "n2": "bye<end>",
         "n3": "byebye<end>",
         "n4": "<end>"
+    },
+
+    "end" : {
+        "n1": "",
+        "n2": "",
+        "n3": "",
+        "n4": ""
     }
 }
