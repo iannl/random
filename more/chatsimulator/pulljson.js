@@ -22,8 +22,8 @@ function test() {
 
 function randomTopic(topic) {
     let fulltop = eval('obj.'+topic+'.n'+random(1, 4))
+    topics.push(fulltop)
     let out = fulltop.replace('<'+getTrigger(fulltop)+'>', '')
-    topics.push(out)
     return out
 }
 
