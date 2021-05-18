@@ -21,7 +21,7 @@ function test() {
 }
 
 function randomTopic(topic) {
-    console.log('%c ' + topic, 'color: red;')
+    //console.log('%c ' + topic, 'color: red;')
     let fulltop = eval('obj.'+topic+'.n'+random(1, 4))
     topics.push(fulltop)
     let out = fulltop.replace('<'+getTrigger(fulltop)+'>', '')
@@ -46,5 +46,8 @@ function loop() {
         console.log(randomTopic(getTrigger(pre)))
     }
     console.log(getNextChat(pre))
+    if (pre == 'end') {
+        return
+    }
     setTimeout(loop(), random(1000, 3000))
 }
