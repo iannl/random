@@ -21,11 +21,15 @@ function test() {
 }
 
 function randomTopic(topic) {
+    try {
     //console.log('%c ' + topic, 'color: red;')
     let fulltop = eval('obj.'+topic+'.n'+random(1, 4))
     topics.push(fulltop)
     let out = fulltop.replace('<'+getTrigger(fulltop)+'>', '')
     return out
+    } catch {
+        return 'end'
+    }
 }
 
 function random(min, max) {
@@ -40,7 +44,7 @@ function getNextChat(prev) {
 
 function loop() {
     let pre = topics[topics.length-1]
-    if (pre == 'end') {
+    if (pre == 'end' || randomTopic(getTrigger(pre)) == 'end') {
         return
     } else {
         randomTopic(getTrigger(pre))
