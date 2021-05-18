@@ -18,7 +18,7 @@ function test() {
 }
 
 function randomTopic(topic) {
-    let fulltop = eval('data.'+topic+'.n'+random(1, 4))
+    let fulltop = eval('obj.'+topic+'.n'+random(1, 4))
     return fulltop.replace('<'+getTrigger(fulltop)+'>', '')
 }
 
