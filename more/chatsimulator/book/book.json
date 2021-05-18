@@ -28,7 +28,7 @@
     },
 
     "newtopic" : {
-        "n1": "so how is your dog?<levels>",
+        "n1": "so how is your dog?<level>",
         "n2": "are you feeling better?<yesno>",
         "n3": "oh<newtopic>",
         "n4": "<farewell>"
