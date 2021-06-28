@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Happy Birthday!</title>
+        <meta charset="utf-8">
+        <script src="encode.js"></script>
+    </head>
+    <body>
+        <h1>Did you think it would be this easy?</h1>
+        <input id="input" placeholder="enter code">
+        <input type="button" value="check" onclick="test(document.getElementById('input'))">
+        <pre id="output"></pre>
+        <script>
+            var blob
+            async function test(inp) {
+                try{blob = new Blob([decode('U2FsdGVkX19gxM6UyMomSPQ5MmpDHe9UfssroGOe4dQUhCZPZFxPVUm9sXXoiJMbJeJlIM95OsHZ8dauydaNgsXGEWQo9PJ9CCTJgprNdifFBMUxV51EZ6RdWW6/jRbctDINm6h7PrTt3gBqTnCzoy/Hr7EJzEW5ObJ54WkS2snMQwCeXrYuNraT9puya1gxzNuf6nV5PHpvnKXI8eVwMUjKga6E2/U6rr/whVXx3++lnaLvMR4qQfuI60NUNMwl7l5DdDbLH7HXOX05UBts2g==',inp.value)], {type: 'text/html'});
+                blob = URL.createObjectURL(blob);
+                window.open(blob)}catch{
+                    inp.value='invalid code'
+                }
+            }
+        </script>
+    </body>
+</html>
