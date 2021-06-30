@@ -30,12 +30,21 @@ var jos = {
     sudo:{
         load:'jos/sudo-load.jpa'
     },
+    app:{
+        terminal:'jos/app-terminal.jpa'
+    },
     loadJPA:async function(url=''){
         const data = await fetch(url);
         console.table(data);
         return data;
     },
-    boot:function(){jos.clear()}
+    boot:function(){
+        jos.clear()
+    },
+    load:'not loaded',
+    app_terminal:{
+        load:'not loaded'
+    },
 }
 window.onload=function(){newJOS()}
 function newJOS(inp='body'){
@@ -44,17 +53,7 @@ document.getElementsByTagName(inp)[0].innerHTML+='<canvas id="jos" width="500" h
 canvas = document.getElementById("jos");
 ctx = canvas.getContext("2d");
 //parseJPA("jos.write('Booting...',0,16,'20px Arial','black','left')")
-parseJPA(`
-async function jpa_run(){
-await jos.write('Booting...',0,16,'20px Arial','black','left')
-await jos.img('https://i.ibb.co/RvkkDP4/splash.png', 500, 500)
-await jos.sleep('300')
-await jos.clear()
-await jos.write('Booting... (V0.13)',0,7,'10px Arial','black','left')
-await jos.boot()
-}
-jpa_run()
-`)
+parseJPA(`jos.loadJPA(jos.sudo.load)`)
 }
 
 function parseJPA(code='jos.write("Please supply code.")'){

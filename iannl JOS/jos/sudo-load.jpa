@@ -17,6 +17,17 @@ _____________________________
 cid:load
 nid:1819238756 ( convertBase(stob("<cid here>"),2,10) )
 */
-jos.write('Booting...',0,16,'20px Arial','black','left')
-jos.img('https://i.ibb.co/RvkkDP4/splash-500x500.png', 0, 0)
-// OR https://i.ibb.co/31df94B/splash.png
+async function sudo_load() {
+    jos.load='booting'
+    await jos.write('Booting...',0,16,'20px Arial','black','left')
+    await jos.img('https://i.ibb.co/RvkkDP4/splash.png', 500, 500)
+    // OR https://i.ibb.co/31df94B/splash.png
+    jos.load='loading'
+    await jos.sleep('500')
+    await jos.clear()
+    await jos.write('Booting... (V0.13)',0,7,'10px Arial','black','left')
+    await jos.boot()
+    jos.load='done'
+    jos.loadJPA(jos.app('terminal'))
+}
+sudo_load()

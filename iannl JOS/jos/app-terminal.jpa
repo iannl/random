@@ -1,0 +1,29 @@
+/*
+
+app-terminal.jpa
+_____________
+
+Copyright  ©2021 iannl. ALL RIGHTS RESERVED.
+see license: https://www.gnu.org/licenses/gpl-3.0.en.html
+
+
+Terminal app for JOS.
+____________________
+
+JOS run code: 
+jos.loadJPA(jos.app('terminal'))
+_____________________________
+
+cid:terminal
+nid:8387235695293259226 ( convertBase(stob("<cid here>"),2,10) )
+*/
+var c1 = '▮'
+var c2 = '▯'
+async function teminal() {
+    app_teminal.load='booting'
+    await sleep('100')
+    app_teminal.load='loading'
+    await jos.write('JOS:JPA user$ ',0,canvas.height-16,'20px Arial','black','left')
+    app_teminal.load='done'
+}
+teminal()
