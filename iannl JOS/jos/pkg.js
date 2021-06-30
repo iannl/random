@@ -28,7 +28,7 @@ var jos = {
         return new Promise(resolve => setTimeout(resolve, ms));
     },
     sudo:{
-        load:'sudo-load.jpa'
+        load:'jos/sudo-load.jpa'
     },
     loadJPA:async function(url=''){
         const data = await fetch(url);
@@ -50,7 +50,7 @@ await jos.write('Booting...',0,16,'20px Arial','black','left')
 await jos.img('https://i.ibb.co/RvkkDP4/splash.png', 500, 500)
 await jos.sleep('300')
 await jos.clear()
-await jos.write('Booting...',0,7,'10px Arial','black','left')
+await jos.write('Booting... (V0.13)',0,7,'10px Arial','black','left')
 await jos.boot()
 }
 jpa_run()
