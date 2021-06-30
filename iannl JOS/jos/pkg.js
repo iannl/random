@@ -34,9 +34,11 @@ var jos = {
         terminal:'jos/app-terminal.jpa'
     },
     loadJPA:async function(url=''){
-        const data = await fetch(url);
-        alert(data);
-        return data;
+        return Promise.all([
+            fetch(url).then(x => x.text()),
+          ]).then(([data]) => {
+            console.log(data);
+        });
     },
     boot:function(){
         jos.clear()
