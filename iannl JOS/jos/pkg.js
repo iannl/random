@@ -37,7 +37,7 @@ var jos = {
         return Promise.all([
             fetch(url).then(x => x.text()),
           ]).then(([data]) => {
-            console.log(data);
+            sessionStorage.setItem('temp',data);
         });
     },
     boot:function(){
@@ -54,7 +54,7 @@ document.getElementsByTagName(inp)[0].innerHTML+='<canvas id="jos" width="500" h
 canvas = document.getElementById("jos");
 ctx = canvas.getContext("2d");
 //parseJPA("jos.write('Booting...',0,16,'20px Arial','black','left')")
-parseJPA(`jos.loadJPA(jos.sudo.load)`)
+parseJPA(`jos.loadJPA(jos.sudo.load);parseJPA(sessionStorage.getItem('temp'))`)
 }
 
 function parseJPA(code='jos.write("Please supply code.")'){
