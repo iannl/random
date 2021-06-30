@@ -1,0 +1,22 @@
+/*
+
+sudo-load.jpa
+_____________
+
+Copyright  ©2021 iannl. ALL RIGHTS RESERVED.
+see license: https://www.gnu.org/licenses/gpl-3.0.en.html
+
+
+Startup code for JOS.
+____________________
+
+JOS run code: 
+jos.loadJPA(jos.sudo('load'))
+_____________________________
+
+cid:load
+nid:1819238756 ( convertBase(stob("<cid here>"),2,10) )
+*/
+jos.write('Booting...',0,16,'20px Arial','black','left')
+jos.img('https://i.ibb.co/RvkkDP4/splash-500x500.png', 0, 0)
+// OR https://i.ibb.co/31df94B/splash.png
