@@ -35,7 +35,7 @@ var jos = {
     },
     loadJPA:async function(url=''){
         const data = await fetch(url);
-        console.table(data);
+        alert(data);
         return data;
     },
     boot:function(){
@@ -48,7 +48,6 @@ var jos = {
 }
 window.onload=function(){newJOS()}
 function newJOS(inp='body'){
-console.log(inp)
 document.getElementsByTagName(inp)[0].innerHTML+='<canvas id="jos" width="500" height="500"></canvas>'
 canvas = document.getElementById("jos");
 ctx = canvas.getContext("2d");
