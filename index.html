@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FILAR FILES</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="zip.min.js"></script>
+    </head>
+    <body>
+        <script>
+            var file_;
+fetch('zip.zip',{mode:"cors"})
+.then(res => res.blob())
+.then(blob => {
+const file = new File([blob], 'test.zip', {type:'application/zip'});
+file_=file;
+});
+
+var blob = new Blob([file_],{type: 'application/zip'})
+
+// create a BlobReader to read with a ZipReader the zip from a Blob object
+async function load(){
+const reader = new zip.ZipReader(new zip.BlobReader(blob));
+
+// get all entries from the zip
+const entries = await reader.getEntries();
+if (entries.length) {
+
+  // get first entry content as text by using a TextWriter
+  const text = await entries[0].getData(
+    // writer
+    new zip.TextWriter(),
+    // options
+    { 
+      onprogress: (index, max) => {
+         // onprogress callback
+      }
+    }
+  );
+  // text contains the entry data as a String
+  console.log(text);
+
+}
+load()
+
+// close the ZipReader
+await reader.close();
+}
+//: application/zip :\\
+
+        </script>
+    </body>
+</html>
